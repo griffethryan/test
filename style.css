@@ -121,7 +121,7 @@ img{
         width: 100%;
     }
 }
-@media screen and(max-width: 600px){
+@media screen and (max-width: 600px){
     .dragon-card, .battle-arena {
         grid-template-columns: 1fr;
     }
