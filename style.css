@@ -121,21 +121,37 @@ img{
         width: 100%;
     }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
+    /* 1. Reset the body so it doesn't shift 275px to the right */
+    body {
+        margin-left: 0 !important;
+        padding: 10px;
+    }
+
+    /* 2. Hide the sidebar so it doesn't float over your content */
+    .sidebar {
+        display: none; 
+    }
+
     .dragon-card, .battle-arena {
         grid-template-columns: 1fr;
     }
-    .lair-title{
+
+    .lair-title {
         font-size: 35px;
     }
+
     .arena-header, .lair-header {
         font-size: 30px;
         height: auto;
         padding: 15px;
     }
-    dragon-card div:hover, .battle-arena div:hover {
+
+    /* Fixed the missing dot before dragon-card here */
+    .dragon-card div:hover, .battle-arena div:hover {
         transform: translateY(-10px);
     }
+
     .arena-button, .codex-button {
         width: 180px;
         font-size: 20px;
