@@ -108,52 +108,36 @@ img{
 .sidebar{
     padding-top: 30px;
 }
-@media screen and(max-width: 1024px) {
-    body {
-        margin-left: 0;
-    }
-    .dragon-card, .battle-arena {
-        grid-template-columns: 1fr 1fr;
-        font-size: 30px;
-    }
-    .sidebar{
-        display: block;
-        width: 100%;
-    }
-}
+
 @media screen and (max-width: 600px) {
-    /* 1. Reset the body so it doesn't shift 275px to the right */
     body {
-        margin-left: 0 !important;
-        padding: 10px;
+        margin-left: 0 !important; /* Forces the 275px margin to disappear */
+        padding: 10px !important;
+        width: 100% !important;
+        overflow-x: hidden; /* Prevents the page from shaking left to right */
     }
 
-    /* 2. Hide the sidebar so it doesn't float over your content */
     .sidebar {
-        display: none; 
+        display: none !important; /* Removes the sidebar entirely on mobile */
     }
 
     .dragon-card, .battle-arena {
-        grid-template-columns: 1fr;
+        display: block !important; /* Switches from grid to a simple vertical stack */
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    .dragon-card div, .battle-arena div {
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+
+    img {
+        max-width: 100% !important; /* Ensures images don't bleed off the screen */
+        height: auto;
     }
 
     .lair-title {
-        font-size: 35px;
-    }
-
-    .arena-header, .lair-header {
-        font-size: 30px;
-        height: auto;
-        padding: 15px;
-    }
-
-    /* Fixed the missing dot before dragon-card here */
-    .dragon-card div:hover, .battle-arena div:hover {
-        transform: translateY(-10px);
-    }
-
-    .arena-button, .codex-button {
-        width: 180px;
-        font-size: 20px;
+        font-size: 30px !important;
     }
 }
