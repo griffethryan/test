@@ -117,10 +117,15 @@ img{
         overflow-x: hidden; /* Prevents the page from shaking left to right */
     }
 
-    .sidebar {
-        display: none !important; /* Removes the sidebar entirely on mobile */
+.sidebar {
+        display: block !important;
+        position: relative; /* Removes the "fixed" or "absolute" positioning */
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 20px 0;
+        background-color: #f2f2f2; /* Matches your body color */
+        border-bottom: 2px solid #398c39; /* Adds a divider */
     }
-
     .dragon-card, .battle-arena {
         display: block !important; /* Switches from grid to a simple vertical stack */
         width: 100% !important;
